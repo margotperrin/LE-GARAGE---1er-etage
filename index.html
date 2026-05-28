@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" href="pannellum.css"/>
+  <script src="pannellum.js"></script>
+  <style>html, body, #panorama { width:100%; height:100vh; margin:0; }</style>
+</head>
+<body>
+  <div id="panorama"></div>
+  <script>
+    pannellum.viewer('panorama', {
+      default: {
+        firstScene: 'scene1',
+        sceneFadeDuration: 1000
+      },
+      scenes: {
+        scene1: {
+          title: 'Palier',
+          panorama: 'PANORAMA PALIER.png',
+          autoLoad: true,
+	  hotSpotDebug: true,
+          hotSpots: [
+            {
+              pitch: -5.9,
+              yaw: -57,
+              type: 'scene',
+              sceneId: 'scene2',
+              text: 'Aller dans l'Atelier Mode Estime'
+            }
+          ]
+        },
+        scene2: {
+          title: 'Atelier Mode Estime',
+          panorama: 'PANORAMA MODE ESTIME.png',
+          autoLoad: true,
+	  hotSpotDebug: true,
+          hotSpots: [
+            {
+              pitch: -3.5,
+              yaw: 5.29,
+              type: 'scene',
+              sceneId: 'scene1',
+              text: 'Retour sur le Palier'
+            }
+          ]
+        }
+      }
+    });
+  </script>
+</body>
+</html>
